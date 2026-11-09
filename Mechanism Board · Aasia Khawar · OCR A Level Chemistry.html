@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mechanism Board · Aasia Khawar · OCR A Level Chemistry</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#1d2733;--mut:#5b6b7b;--navy:#1f3a5f;--teal:#2a7f8e;--amber:#d9821c;--rose:#d6455d;--green:#2f9a58;--lilac:#7b5ea7;--board:#fbfdff;--line:#c9d6e2;--bond:#2b3a4a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1823;--card:#182535;--ink:#e8eef5;--mut:#9fb1c3;--navy:#8fb6e8;--teal:#4cc0d2;--amber:#f2a84b;--rose:#ff7a92;--green:#58c98a;--lilac:#b79af0;--board:#0c1520;--line:#2c4056;--bond:#d5e0ec}}
+:root[data-theme="dark"]{--bg:#0f1823;--card:#182535;--ink:#e8eef5;--mut:#9fb1c3;--navy:#8fb6e8;--teal:#4cc0d2;--amber:#f2a84b;--rose:#ff7a92;--green:#58c98a;--lilac:#b79af0;--board:#0c1520;--line:#2c4056;--bond:#d5e0ec}
+html,body{height:auto}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:14px 14px 40px}
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.brand{font-weight:800;letter-spacing:.14em;font-size:12px;color:var(--teal)}h1{margin:0;font-size:22px;color:var(--navy)}
+.sub{color:var(--mut);font-size:13px;margin:0 0 12px}
+.tabs,.stages{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+button{font:inherit;cursor:pointer;border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:10px}
+button:hover{border-color:var(--teal)}button.on{background:var(--navy);border-color:var(--navy);color:var(--bg);font-weight:700}
+button.go{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:700}button:disabled{opacity:.45;cursor:not-allowed}
+.stages .st{flex:1;min-width:110px;text-align:center;font-size:13px;font-weight:700;padding:7px;border-radius:999px;background:var(--card);border:1.5px solid var(--line);color:var(--mut)}
+.stages .st.on{background:var(--amber);border-color:var(--amber);color:#fff}.stages .st.done{border-color:var(--green);color:var(--green)}
+.board{background:var(--board);border:2px solid var(--line);border-radius:16px;overflow:hidden}
+svg{display:block;width:100%;height:auto}svg text{font-family:inherit;fill:var(--ink)}
+.bond{stroke:var(--bond);stroke-width:3;stroke-linecap:round;fill:none}.big{font-size:26px;font-weight:700}.sm{font-size:15px;font-weight:700}
+.arw{fill:none;stroke-width:4;stroke-linecap:round}.arw.fresh{stroke-dasharray:500;stroke-dashoffset:500;animation:dr 1.5s ease forwards}
+@keyframes dr{to{stroke-dashoffset:0}}.fade.fresh{animation:fd 1s ease both}@keyframes fd{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.e{fill:var(--amber);stroke:var(--card);stroke-width:1.5}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:12px 16px;margin-top:12px}
+.card h3{margin:0 0 4px;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.say{border-left:6px solid var(--teal)}.say h3{color:var(--teal)}.try{border-left:6px solid var(--amber)}.try h3{color:var(--amber)}.rev{border-left:6px solid var(--green)}.rev h3{color:var(--green)}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center}.dots{margin-left:auto;color:var(--mut);font-size:13px}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}.opt.ok{border-color:var(--green);background:color-mix(in srgb,var(--green) 18%,var(--card))}.opt.bad{border-color:var(--rose);background:color-mix(in srgb,var(--rose) 16%,var(--card))}
+.fb{margin-top:8px;font-weight:600}.mk{list-style:none;padding:0;margin:6px 0}.mk li{padding:5px 0 5px 28px;position:relative;opacity:.25;transition:opacity .5s}.mk li.in{opacity:1}.mk li:before{content:"✓";position:absolute;left:4px;color:var(--green);font-weight:800}
+.tip{font-size:14px;color:var(--mut);margin-top:6px}footer{margin-top:22px;text-align:center;color:var(--mut);font-size:12px}
+</style></head><body><div class="wrap">
+<header><div><div class="brand">AASIA KHAWAR</div><h1>Mechanism Board</h1></div></header>
+<p class="sub">OCR A Level Chemistry A · H432/02 · watch the electrons move, try it yourself, then reveal the mark scheme answer.</p>
+<div class="tabs" id="tabs"></div><div class="stages" id="stages"></div>
+<div class="board"><svg id="svg" viewBox="0 0 640 310" role="img" aria-label="Mechanism animation"><defs>
+<marker id="hr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0L9,4.5L0,9z" fill="#d6455d"/></marker>
+<marker id="hg" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0L9,4.5L0,9z" fill="#2f9a58"/></marker>
+<marker id="hb" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0L9,4.5L0,9z" fill="#2a7f8e"/></marker></defs><g id="scene"></g></svg></div>
+<div id="panel"></div>
+<footer>Made for Aasia Khawar’s OCR A Level Chemistry students · based on her Solved Papers 1 and 2 · past-paper content © OCR</footer>
+</div>
+<script>
+const hex=(x,y,r)=>[0,1,2,3,4,5].map(k=>[x+r*Math.cos((90+60*k)*Math.PI/180),y-r*Math.sin((90+60*k)*Math.PI/180)]);
+const ring=(x,y,r,circle=true)=>{const p=hex(x,y,r).map(a=>a.join(',')).join(' ');return `<polygon points="${p}" class="bond" stroke-linejoin="round"/>`+(circle?`<circle cx="${x}" cy="${y}" r="${r*.6}" class="bond" stroke-width="2.4"/>`:'')};
+const horse=(x,y,r)=>{const p=hex(x,y,r*.72);const s=[1,2,3,4,5].map(k=>p[k%6].join(',')).join(' ');return `<polyline points="${s}" fill="none" stroke="var(--rose)" stroke-width="4" stroke-linecap="round"/><text x="${x-6}" y="${y+7}" font-size="20" font-weight="800" fill="var(--rose)">+</text>`};
+const T=(x,y,t,c='',cls='sm',a='start')=>`<text x="${x}" y="${y}" class="${cls}" text-anchor="${a}"${c?` style="fill:${c}"`:''}>${t}</text>`;
+const Ln=(a,b,c,d)=>`<path class="bond" d="M${a},${b}L${c},${d}"/>`;
+const arrow=(d,col,m)=>({d,col,m});
+const LESSONS=[
+{tab:'Nucleophilic substitution',ref:'Solved Paper 2 · Q1(a)(i) · cyanide + 1-chloropropane',
+ scene:s=>[
+  [0,Ln(262,160,318,160)+T(170,170,'CH₃CH₂','',"big")+T(328,170,'C','',"big")+Ln(345,160,405,160)+T(420,170,'Cl','',"big")+T(70,262,'⁻:C≡N','var(--teal)',"big")+T(60,292,'cyanide ion','var(--mut)','sm')],
+  [1,T(330,128,'δ+','var(--teal)')+T(428,128,'δ–','var(--rose)')],
+  [2,arrow('M92,246 Q210,190 322,184','var(--rose)','hr')],
+  [3,arrow('M375,152 Q405,108 430,146','var(--green)','hg')],
+  [4,Ln(250,262,300,262)+T(130,272,'CH₃CH₂CH₂C≡N','var(--green)','big')+T(380,272,'+  Cl⁻','var(--rose)','big')]],
+ say:['Meet the reactants: 1-chloropropane and the cyanide ion. CN⁻ has a lone pair on its carbon atom.','Chlorine is more electronegative, so the C–Cl bond is polar: Cδ⁺ and Clδ⁻. The δ⁺ carbon is the target.','Arrow 1 starts on the lone pair on the carbon of CN⁻ and ends on the δ⁺ carbon. A curly arrow always shows a pair of electrons moving.','Arrow 2 starts in the middle of the C–Cl bond and ends on Cl. Both bonding electrons go to chlorine, so Cl⁻ leaves.','Product: butanenitrile and Cl⁻. The chain is one carbon longer. Name it: nucleophilic substitution.'],
+ q:{p:'Where does the curly arrow for the cyanide nucleophile START?',o:['On the N atom of CN⁻','On the lone pair on the C of CN⁻','On the C–Cl bond','On the Cl atom'],c:1,why:'The carbon of CN⁻ has the lone pair that forms the new C–C bond. Starting on N is the most common mistake.'},
+ mk:['Dipole shown on C–Cl: δ⁺ on C, δ⁻ on Cl','Curly arrow from the lone pair on C of ⁻CN to the δ⁺ carbon','Curly arrow from the C–Cl bond to Cl','Correct product CH₃CH₂CH₂CN (and Cl⁻)'],tip:'Examiner tip: arrows must start on a bond or lone pair, never on an atom label.'},
+{tab:'Nucleophilic addition',ref:'Solved Paper 1 · Q10 / Q19 · cyanide (HCN) adding to a carbonyl',
+ scene:s=>[
+  [0,Ln(320,155,320,110)+T(320,98,'O','var(--rose)','big','middle')+T(320,182,'C','','big','middle')+Ln(300,192,248,215)+T(236,230,'R','','big','middle')+Ln(340,192,392,215)+T(404,230,'R′','','big','middle')+`<path class="bond" d="M330,152L330,112" />`+T(100,262,'⁻:C≡N','var(--teal)',"big")+T(470,98,'H⁺','var(--green)','big')],
+  [1,T(352,172,'δ+','var(--teal)')+T(352,92,'δ–','var(--rose)')],
+  [2,arrow('M130,250 Q220,250 304,198','var(--rose)','hr')],
+  [3,arrow('M333,132 Q378,112 346,94','var(--green)','hg')],
+  [4,arrow('M300,86 Q380,40 452,86','var(--teal)','hb')+T(80,296,'R–C(OH)(CN)–R′  hydroxynitrile','var(--green)','sm')]],
+ say:['A carbonyl compound (C=O) meets the cyanide ion. Oxygen is more electronegative, so the C=O bond is polar.','The carbon is δ⁺ and electron-poor, so a nucleophile attacks the carbon. It is the opposite of an electrophile.','Arrow 1: from the lone pair on carbon of CN⁻ to the δ⁺ carbon of C=O.','Arrow 2: the π bond of C=O moves onto oxygen. The oxygen becomes O⁻.','Arrow 3: a lone pair on O⁻ takes H⁺ (from H₂O or the acid). The product is a hydroxynitrile. Name it: nucleophilic addition. With NaBH₄ the nucleophile is H⁻ instead.'],
+ q:{p:'Which atom of the carbonyl group does the nucleophile attack, and why?',o:['Oxygen, because it is δ⁻','Carbon, because it is δ⁺ (oxygen is more electronegative)','Carbon, because it is δ⁻','Oxygen, because it is δ⁺'],c:1,why:'A nucleophile is attracted to a δ⁺ centre. C=O polarity puts δ⁺ on carbon.'},
+ mk:['Dipole on C=O: Cδ⁺ and Oδ⁻','Arrow from the lone pair on C of ⁻CN to the C of C=O','Arrow from the C=O π bond to oxygen','Arrow from the lone pair on O⁻ to H⁺','Product: hydroxynitrile; mechanism named nucleophilic addition'],tip:'Examiner tip: name the mechanism with BOTH words: nucleophilic + addition.'},
+{tab:'Electrophilic substitution',ref:'Solved Paper 1 · Q5 · nitration of benzene',
+ scene:s=>[
+  [0,ring(150,175,58)+T(150,258,'benzene','var(--mut)','sm','middle')+T(335,98,'NO₂⁺','var(--rose)','big')+T(335,128,'electrophile','var(--mut)','sm')],
+  [2,ring(480,200,52,false)+horse(480,200,52)+T(462,128,'H','','sm')+T(506,128,'NO₂','var(--rose)','sm')+Ln(480,148,466,138)+Ln(480,148,498,138)+T(480,282,'intermediate','var(--mut)','sm','middle')],
+  [1,arrow('M188,128 Q265,52 318,90','var(--rose)','hr')],
+  [3,arrow('M468,134 Q430,150 462,176','var(--green)','hg')+T(170,296,'nitrobenzene','var(--green)','big')+T(335,296,'+  H⁺','var(--rose)','big')],
+  [4,T(20,24,'H⁺ + HSO₄⁻ → H₂SO₄   (catalyst regenerated)','var(--teal)','sm')]],
+ say:['Benzene has a ring of delocalised π electrons, so it is electron-rich. HNO₃ with H₂SO₄ makes the electrophile NO₂⁺.','Arrow 1: from the π ring (the circle) to the N of NO₂⁺. The ring donates a pair of electrons to the electrophile.','The intermediate: the horseshoe covers about 4 of the 6 sides, with a + inside. H and NO₂ sit on the same carbon.','Arrow 2: from the C–H bond back into the ring. The ring is restored and H⁺ leaves. This is substitution, not addition.','H⁺ combines with HSO₄⁻ to regenerate H₂SO₄, so sulfuric acid is a catalyst.'],
+ q:{p:'Where does the FIRST curly arrow start and finish?',o:['From the N of NO₂⁺ to the ring','From the π ring (circle) to the N of NO₂⁺','From the C–H bond to the N of NO₂⁺','From H₂SO₄ to the ring'],c:1,why:'The ring is the electron donor. The first arrow starts at the delocalised π system and goes to the electrophile.'},
+ mk:['Electrophile formed: HNO₃ + 2H₂SO₄ → NO₂⁺ + H₃O⁺ + 2HSO₄⁻','Arrow from the π ring to N of NO₂⁺','Intermediate: horseshoe over ~4 sides, + inside, H and NO₂ on the same C','Arrow from the C–H bond back into the ring, H⁺ lost','Catalyst regenerated: H⁺ + HSO₄⁻ → H₂SO₄'],tip:'Examiner tip: the electrophile-generation equation and the catalyst regeneration are two separate marks. Do not forget them.'}];
+const S={l:0,stage:0,step:0,timer:null,picked:false};
+const $=id=>document.getElementById(id);
+function paint(){
+  const L=LESSONS[S.l],items=L.scene(S);const max=L.say.length-1;let step=S.stage==1?0:S.step;let html='';
+  const cap=S.stage==1?0:step;
+  items.filter(i=>i[0]<=cap).forEach(i=>{const fresh=S.stage!=1&&i[0]==cap&&cap>0;const v=i[1];
+    if(typeof v=='string'){html+=`<g class="fade${fresh?' fresh':''}">${v}</g>`}
+    else{html+=`<path class="arw${fresh?' fresh':''}" d="${v.d}" stroke="${v.col}" marker-end="url(#${v.m})"/>`;
+      if(fresh)html+=[0,.18].map(b=>`<circle r="5.5" class="e"><animateMotion dur="1.5s" begin="${b}s" path="${v.d}" fill="freeze"/></circle>`).join('')}});
+  $('scene').innerHTML=html;
+}
+function render(){
+  $('tabs').innerHTML=LESSONS.map((l,i)=>`<button class="${i==S.l?'on':''}" onclick="pick(${i})">${i+1}. ${l.tab}</button>`).join('');
+  $('stages').innerHTML=['1 · Concept','2 · Try it','3 · Reveal'].map((t,i)=>`<div class="st ${i==S.stage?'on':(i<S.stage?'done':'')}">${t}</div>`).join('');
+  const L=LESSONS[S.l],max=L.say.length-1;let h='';
+  if(S.stage==0){h=`<div class="card say"><h3>Concept on the board · step ${S.step+1} of ${max+1}</h3><div>${L.say[S.step]}</div><div class="ctl"><button onclick="go(-1)" ${S.step==0?'disabled':''}>◀ Back</button><button onclick="paint()">↻ Replay step</button>${S.step<max?'<button class="go" onclick="go(1)">Next ▶</button>':'<button class="go" onclick="stage(1)">Now you try →</button>'}<span class="dots">${L.ref}</span></div></div>`}
+  if(S.stage==1){h=`<div class="card try"><h3>Your turn · ${L.ref}</h3><div><b>${L.q.p}</b></div><div id="opts">${L.q.o.map((o,i)=>`<button class="opt" onclick="ans(${i},this)">${'ABCD'[i]}. ${o}</button>`).join('')}</div><div class="fb" id="fb"></div><div class="tip">Then draw the full mechanism on paper with curly arrows, dipoles and the product. Only then press Reveal.</div><div class="ctl"><button onclick="stage(0)">◀ Review concept</button><button class="go" id="rv" onclick="stage(2)" ${S.picked?'':'disabled'}>Reveal the answer ▶</button><button onclick="S.picked=true;$('rv').disabled=false">I have drawn it</button></div></div>`}
+  if(S.stage==2){h=`<div class="card rev"><h3>Model answer · mark scheme points</h3><ul class="mk" id="mk">${L.mk.map(m=>`<li>${m}</li>`).join('')}</ul><div class="tip">${L.tip}</div><div class="ctl"><button onclick="stage(2)">↻ Replay</button><button onclick="stage(0)">Concept again</button>${S.l<LESSONS.length-1?`<button class="go" onclick="pick(${S.l+1})">Next mechanism ▶</button>`:'<button class="go" onclick="pick(0)">Start again ↺</button>'}</div></div>`}
+  $('panel').innerHTML=h;paint();
+}
+function pick(i){clearInterval(S.timer);S.l=i;S.stage=0;S.step=0;S.picked=false;render()}
+function go(d){S.step=Math.max(0,Math.min(LESSONS[S.l].say.length-1,S.step+d));render()}
+function stage(n){clearInterval(S.timer);S.stage=n;S.picked=n==2?true:S.picked;S.step=0;render();if(n==2)play()}
+function play(){const L=LESSONS[S.l];let k=0;S.step=0;const lis=()=>document.querySelectorAll('#mk li');
+  const tick=()=>{S.step=Math.min(k,L.say.length-1);paint();const m=lis();const upto=Math.round((k+1)*m.length/L.say.length);m.forEach((li,i)=>li.classList.toggle('in',i<upto));k++;if(k>=L.say.length){clearInterval(S.timer);lis().forEach(li=>li.classList.add('in'))}};
+  tick();S.timer=setInterval(tick,2600)}
+function ans(i,b){const q=LESSONS[S.l].q;document.querySelectorAll('.opt').forEach((x,j)=>{x.classList.remove('ok','bad');if(j==q.c)x.classList.add('ok');});if(i!=q.c)b.classList.add('bad');
+  $('fb').textContent=(i==q.c?'Correct. ':'Not quite. ')+q.why;S.picked=true;$('rv').disabled=false}
+render();
+</script></body></html>
